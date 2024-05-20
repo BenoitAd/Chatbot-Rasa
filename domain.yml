@@ -5,29 +5,74 @@ intents:
   - goodbye
   - affirm
   - deny
-  - mood_great
-  - mood_unhappy
   - bot_challenge
+  - inform_date
+  - inform_number_of_people
+  - inform_reservation_name
+  - inform_phone_number
+  - book_table
+  - request_date
+  - request_number_of_people
+  - request_reservation_name
+  - request_phone_number
+  - request_cancellation
+  - request_reservation_number
+  - request_reservation_information
+  - modify_comment
+
+actions:
+  - action_check_availability
+  - action_make_reservation
+  - action_cancel_reservation
+  - ActionDisplayReservationInformation
+  - ActionModifyComment
+  - action_get_reservation_number
+  - ActionUpdateReservation 
+  - action_create_reservation
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
+    - text: "Bienvenue dans le restaurant ADB FOOD, comment puis-je vous aider ?"
 
   utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
+    - text: "Est-ce que ça vous a aidé ?"
 
   utter_goodbye:
-  - text: "Bye"
+    - text: "Au revoir"
 
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+    - text: "Je suis un bot, propulsé par Rasa."
+
+  utter_ask_date:
+    - text: "Pour quelle date souhaitez-vous réserver ?"
+
+  utter_ask_number_of_people:
+    - text: "Pour combien de personnes voulez-vous réserver ?"
+
+  utter_ask_reservation_name:
+    - text: "Sous quel nom dois-je réserver la table ?"
+
+  utter_ask_phone_number:
+    - text: "Puis-je avoir votre numéro de téléphone pour la réservation ?"
+
+  utter_confirmation_reservation:
+    - text: "Votre réservation a été confirmée. Voici votre numéro de réservation : {reservation_number}"
+
+  utter_ask_reservation_number:
+    - text: "Quel est le numéro de votre réservation ?"
+
+  utter_confirmation_cancellation:
+    - text: "Votre réservation a été annulée."
+
+  utter_confirmation_comment_modification:
+    - text: "Le commentaire de votre réservation a été modifié avec succès."
+
+entities:
+  - date
+  - number_of_people
+  - reservation_name
+  - phone_number
+  - reservation_number
 
 session_config:
   session_expiration_time: 60

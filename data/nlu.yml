@@ -3,89 +3,161 @@ version: "3.1"
 nlu:
 - intent: greet
   examples: |
-    - hey
-    - hello
-    - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
+    - salut
+    - bonjour
+    - bonjour là-bas
+    - bonsoir
+    - salut là-bas
+    - c'est parti
+    - salut mec
+    - bonsoir
+    - bon après-midi
+    - bon aprem
+    - Bonjour
 
 - intent: goodbye
   examples: |
-    - cu
-    - good by
-    - cee you later
-    - good night
-    - bye
-    - goodbye
-    - have a nice day
-    - see you around
+    - à plus
+    - au revoir
+    - à plus tard
+    - bonne nuit
+    - au revoir
+    - passe une bonne journée
+    - à bientôt
     - bye bye
-    - see you later
+    - tchao
+    - à plus tard
 
 - intent: affirm
   examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
+    - oui
+    - ouais
+    - en effet
+    - bien sûr
+    - ça semble biens
 
 - intent: deny
   examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
-
-- intent: mood_great
-  examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
-
-- intent: mood_unhappy
-  examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
+    - non
+    - non non non
+    - jamais
+    - je ne pense pas
+    - je n'aime pas ça
+    - pas du tout
+    - pas vraiment
 
 - intent: bot_challenge
   examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
+    - es-tu un bot ?
+    - es-tu un humain ?
+    - est-ce que je parle à un bot ?
+    - est-ce que je parle à un humain ?
+
+- intent: book_table
+  examples: |
+    - Je voudrais réserver une table.
+    - Est-ce que je peux réserver une table ?
+    - J'aimerais faire une réservation pour ce soir.
+    - Je veux réserver une table
+    - je veux une réservation
+    - je veux faire une réservation
+
+- intent: request_cancellation
+  examples: |
+    - Je veux annuler ma réservation.
+    - Est-il possible d'annuler ma réservation ?
+    - Je ne pourrai pas venir, je veux annuler ma réservation.
+
+- intent: request_reservation_information
+  examples: |
+    - Pouvez-vous me donner des informations sur ma réservation ?
+    - Je voudrais savoir quand est ma réservation.
+    - Je souhaite vérifier ma réservation.
+
+- intent: request_date
+  examples: |
+    - Je veux réserver pour mardi soir
+    - Quand voulez-vous réserver la table ?
+    - À quelle date préférez-vous réserver ?
+
+- intent: request_number_of_people
+  examples: |
+    - Pour combien de personnes voulez-vous réserver ?
+    - Combien de personnes seront présentes à votre réservation ?
+    - Quel est le nombre de personnes pour la réservation ?
+
+- intent: request_reservation_name
+  examples: |
+    - Sous quel nom dois-je réserver la table ?
+    - Quel est le nom de réservation ?
+    - À quel nom dois-je réserver la table ?
+
+- intent: request_phone_number
+  examples: |
+    - Puis-je avoir votre numéro de téléphone pour la réservation ?
+    - Quel est votre numéro de téléphone pour la réservation ?
+    - Avez-vous un numéro de téléphone pour la réservation ?
+
+- intent: modify_comment
+  examples: |
+    - Je voudrais ajouter un commentaire à ma réservation.
+    - Est-ce que je peux modifier le commentaire de ma réservation ?
+    - Comment puis-je ajouter des commentaires à ma réservation ?
+
+- intent: inform_date
+  examples: |
+    - le [12/01/2025](date)
+    - le [24/05/2024](date)
+    - pour le [04/09/2024](date)
+    - Demain soir (date)
+    - le [18/07/2024](date)
+    - le [30/03/2025](date)
+    - pour le [08/12/2024](date)
+    - dans deux jours (date)
+    - le [15/10/2024](date)
+
+- intent: inform_number_of_people
+  examples: |
+    - pour [4 personnes](number_of_people)
+    - pour [2 personnes](number_of_people)
+    - une réservation pour [deux personnes](number_of_people)
+    - pour [6 personnes](number_of_people)
+    - [8](number_of_people)
+    - pour [5 personnes](number_of_people)
+    - une table pour [trois personnes](number_of_people)
+    - pour [10 personnes](number_of_people)
+    - [7](number_of_people)
+    - [12](number_of_people)
+    - [4] personnes (number_of_people)
+    - [2] personnes (number_of_people)
+    - une réservation pour [deux] personnes (number_of_people)
+
+- intent: inform_reservation_name
+  examples: |
+    - [Jeanne Delaforet](reservation_name)
+    - Famille [Meunier](reservation_name)
+    - Sous le nom de [Marie Dupuit](reservation_name)
+    - [Thomas et Amélie](reservation_name)
+    - Réservation pour [M. Dupont](reservation_name)
+    - [Famille Lambert](reservation_name)
+    - [Mme Durand](reservation_name)
+    - [M. Martin](reservation_name)
+    - Pour [M. et Mme Martin](reservation_name)
+    - Pour [Mr. et Mme Martin](reservation_name)
+    - [Les Johnson](reservation_name)
+    - [Les Smith](reservation_name)
+
+
+- intent: inform_phone_number
+  examples: |
+    - [0240405568](phone_number)
+    - Mon numéro est [0240452363](phone_number)
+    - [0212387456](phone_number)
+    - Vous pouvez me joindre au [0240321457](phone_number)
+    - Mon numéro de téléphone est [0215478963](phone_number)
+    - [0278963214](phone_number)
+    - Mon numéro : [0245879632](phone_number)
+    - [0240632145](phone_number)
+    - Mon contact : [0214789632](phone_number)
+    - [0213958741](phone_number)
+
