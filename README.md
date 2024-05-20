@@ -5,6 +5,7 @@ Ce projet, réalisé en partenariat avec l'école Epsi, vise à approfondir l'ap
 
 ![image](https://github.com/BenoitAd/Chatbot-Rasa/assets/62358946/a957c63c-b5c9-465c-92f6-9e3cbc679f3a)
 
+![image](https://github.com/BenoitAd/Chatbot-Rasa/assets/62358946/5408c468-48ce-4112-9959-759b337af96d)
 
 # Instructions & Intégration 🗒️
 
