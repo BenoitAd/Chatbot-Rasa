@@ -28,3 +28,17 @@ rasa run actions --cors "*" --debug
 **Notes :** Si vous exécutez le serveur Rasa sur un **serveur distant** comme une instance EC2, il est nécessaire de modifier le fichier **constants.js** et de remplacer **"localhost"** par **l'adresse IP publique du serveur**.
 
 **Étape 4 :** Une fois que votre serveur Rasa est opérationnel, vous pouvez tester le bot en exécutant le fichier **index.html** dans le navigateur.
+
+# Exemple de story type :
+Création de réservation : 
+1) bonjour
+2) j'aimerais réserver une table
+3) Pour le 13/10/2000
+4) Pour 6 personnes
+5) M. Auger
+6) Contact: 0612345468
+
+Information sur une réservation : 
+1) bonjour
+2) Je voudrais des informations sur ma reservation
+3) M. Auger
