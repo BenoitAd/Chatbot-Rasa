@@ -3,45 +3,34 @@ version: "3.1"
 intents:
   - greet
   - goodbye
-  - affirm
-  - deny
-  - bot_challenge
   - inform_date
   - inform_number_of_people
   - inform_reservation_name
   - inform_phone_number
   - book_table
-  - request_date
-  - request_number_of_people
-  - request_reservation_name
-  - request_phone_number
   - request_cancellation
-  - request_reservation_number
   - request_reservation_information
   - modify_comment
+  - inform_reservation_number
+
+
 
 actions:
-  - action_check_availability
+  - action_add_date
+  - action_add_people
+  - action_retrieve_reservation
+  - action_confirm_reservation
+  - action_delete_reservation
+  - action_add_name
+  - action_add_telephone
   - action_make_reservation
-  - action_cancel_reservation
-  - ActionDisplayReservationInformation
-  - ActionModifyComment
-  - action_get_reservation_number
-  - ActionUpdateReservation 
-  - action_create_reservation
 
 responses:
   utter_greet:
     - text: "Bienvenue dans le restaurant ADB FOOD, comment puis-je vous aider ?"
 
-  utter_did_that_help:
-    - text: "Est-ce que ça vous a aidé ?"
-
   utter_goodbye:
-    - text: "Au revoir"
-
-  utter_iamabot:
-    - text: "Je suis un bot, propulsé par Rasa."
+    - text: "Au revoir et a bientot dans notre restaurant !"
 
   utter_ask_date:
     - text: "Pour quelle date souhaitez-vous réserver ?"
@@ -55,24 +44,58 @@ responses:
   utter_ask_phone_number:
     - text: "Puis-je avoir votre numéro de téléphone pour la réservation ?"
 
-  utter_confirmation_reservation:
-    - text: "Votre réservation a été confirmée. Voici votre numéro de réservation : {reservation_number}"
-
   utter_ask_reservation_number:
     - text: "Quel est le numéro de votre réservation ?"
 
   utter_confirmation_cancellation:
     - text: "Votre réservation a été annulée."
 
-  utter_confirmation_comment_modification:
-    - text: "Le commentaire de votre réservation a été modifié avec succès."
+  utter_ask_name:
+    - text: "Au nom de qui est la réservation ?"
 
 entities:
+  - num_people
   - date
-  - number_of_people
-  - reservation_name
-  - phone_number
-  - reservation_number
+  - code
+  - comment
+  - name
+  - telephone
+
+slots:
+  code:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: code
+
+  num_people:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: num_people
+  date:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: date
+
+  name:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: name
+  
+  telephone:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: telephone
+
+  comment:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: comment
 
 session_config:
   session_expiration_time: 60

@@ -10,45 +10,47 @@ stories:
   - intent: inform_date
     entities:
       - date: "2025-05-10"
+  - action: action_add_date
   - action: utter_ask_number_of_people
   - intent: inform_number_of_people
     entities:
-      - number_of_people: "4"
+      - num_people: "4"
+  - action: action_add_people
   - action: utter_ask_reservation_name
   - intent: inform_reservation_name
     entities:
-      - reservation_name: "John Doe"
+      - name: "John Doe"
+  - action: action_add_name
   - action: utter_ask_phone_number
   - intent: inform_phone_number
     entities:
-      - phone_number: "0240405568"
-  - action: action_create_reservation  
-  - action: action_check_availability
+      - telephone: "0240405568"
+  - action: action_add_telephone
+  - action: action_confirm_reservation 
   - action: action_make_reservation
-  - action: action_get_reservation_number
-  - action: utter_confirmation_reservation
-  - action: utter_goodbye
+  - action: action_listen
 
 - story: "cancel a reservation"
   steps:
   - intent: greet
   - action: utter_greet
   - intent: request_cancellation
-  - action: utter_ask_phone_number
-  - intent: inform_phone_number
+  - action: utter_ask_reservation_number
+  - intent: inform_reservation_number
     entities:
-      - phone_number: "0240405568"
-  - action: action_cancel_reservation
+      - code: "1546767"
+  - action: action_delete_reservation
   - action: utter_confirmation_cancellation
   - action: utter_goodbye
 
-- story: "show reservation information and modify the comment"
+- story: "show reservation information"
   steps:
   - intent: greet
   - action: utter_greet
   - intent: request_reservation_information
-  - action: ActionDisplayReservationInformation
-  - intent: modify_comment
-  - action: ActionModifyComment
-  - action: utter_confirmation_comment_modification
+  - action: utter_ask_name
+  - intent: inform_reservation_name
+    entities:
+      - name: "John Doe"
+  - action: action_retrieve_reservation
   - action: utter_goodbye

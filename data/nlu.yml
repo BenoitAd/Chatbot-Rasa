@@ -118,46 +118,96 @@ nlu:
 
 - intent: inform_number_of_people
   examples: |
-    - pour [4 personnes](number_of_people)
-    - pour [2 personnes](number_of_people)
-    - une réservation pour [deux personnes](number_of_people)
-    - pour [6 personnes](number_of_people)
-    - [8](number_of_people)
-    - pour [5 personnes](number_of_people)
-    - une table pour [trois personnes](number_of_people)
-    - pour [10 personnes](number_of_people)
-    - [7](number_of_people)
-    - [12](number_of_people)
-    - [4] personnes (number_of_people)
-    - [2] personnes (number_of_people)
-    - une réservation pour [deux] personnes (number_of_people)
+    - pour [4](num_people) personnes
+    - pour [2](num_people) personnes
+    - une réservation pour [deux](num_people) personnes
+    - pour [6](num_people) personnes
+    - [8](num_people)
+    - pour [5](num_people) personnes
+    - une table pour [trois](num_people) personnes
+    - pour [10](num_people) personnes
+    - [7](num_people)
+    - [12](num_people)
+    - [4](num_people) personnes
+    - [2](num_people) personnes
+    - une réservation pour [deux](num_people) personnes
+    - une réservation pour [quatre](num_people) personnes
+    - pour [huit](num_people) personnes
+    - pour [trois](num_people) personnes
+    - une table pour [cinq](num_people) personnes
+    - pour [sept](num_people) personnes
+    - une réservation pour [dix](num_people) personnes
+    - une table pour [six](num_people) personnes
+    - pour [neuf](num_people) personnes
 
 - intent: inform_reservation_name
   examples: |
-    - [Jeanne Delaforet](reservation_name)
-    - Famille [Meunier](reservation_name)
-    - Sous le nom de [Marie Dupuit](reservation_name)
-    - [Thomas et Amélie](reservation_name)
-    - Réservation pour [M. Dupont](reservation_name)
-    - [Famille Lambert](reservation_name)
-    - [Mme Durand](reservation_name)
-    - [M. Martin](reservation_name)
-    - Pour [M. et Mme Martin](reservation_name)
-    - Pour [Mr. et Mme Martin](reservation_name)
-    - [Les Johnson](reservation_name)
-    - [Les Smith](reservation_name)
-
+    - [Jeanne Delaforet](name)
+    - Famille [Meunier](name)
+    - Sous le nom de [Marie Dupuit](name)
+    - [Thomas et Amélie](name)
+    - Réservation pour [M. Dupont](name)
+    - [Famille Lambert](name)
+    - [Mme Durand](name)
+    - [M. Martin](name)
+    - [Mme Martin](name)
+    - [Mr. et Mme Martin](name)
+    - [Les Johnson](name)
+    - [M Smith](name)
+    - Pour [M. et Mme Martin](name)
+    - Pour [Mr. et Mme Martin](name)
+    - [Les Johnson](name)
+    - [Les Smith](name)
+    - [M. et Mme Durand](name)
+    - [Julien Dupuis](name)
+    - [Sophie Lefevre](name)
+    - [David et Sarah](name)
+    - Réservation pour [la famille Legrand](name)
+    - [Mme Petit](name)
+    - [Jacques Dubois](name)
+    - [Caroline et Pierre](name)
 
 - intent: inform_phone_number
   examples: |
-    - [0240405568](phone_number)
-    - Mon numéro est [0240452363](phone_number)
-    - [0212387456](phone_number)
-    - Vous pouvez me joindre au [0240321457](phone_number)
-    - Mon numéro de téléphone est [0215478963](phone_number)
-    - [0278963214](phone_number)
-    - Mon numéro : [0245879632](phone_number)
-    - [0240632145](phone_number)
-    - Mon contact : [0214789632](phone_number)
-    - [0213958741](phone_number)
+    - [0240405568](telephone)
+    - Mon numéro est [0240452363](telephone)
+    - [0212387456](telephone)
+    - Vous pouvez me joindre au [0240321457](telephone)
+    - Mon numéro de téléphone est [0215478963](telephone)
+    - [0278963214](telephone)
+    - Mon numéro : [0245879632](telephone)
+    - [0240632145](telephone)
+    - Mon contact : [0214789632](telephone)
+    - Mon numéro est le [0213958741](telephone)
+    - Mon contact est le [0240102030](telephone)
+    - ce numéro [0278563412](telephone)
+    - [0210304050](telephone)
+    - [0245689741](telephone)
+    - [0214785963](telephone)
+    - [0278963254](telephone)
+    - [0240876512](telephone)
+    - [0213546879](telephone)
+    - [0249876543](telephone)
+    - [0278645123](telephone)
 
+- intent: inform_reservation_number
+  examples: |
+    - [1546767](code)
+    - mon code de réservation est [1546767](code)
+    - [1546767](code) est mon numéro de réservation
+    - mon code est [1546767](code)
+    - mon numéro : [1546767](code)
+    - [2356987](code)
+    - le code de ma réservation est [2356987](code)
+    - [4567890](code) est le numéro de ma réservation
+    - mon numéro de confirmation est [7891234](code)
+    - mon numéro de dossier est [9632587](code)
+    - mon code de réservation : [8520147](code)
+    - [9517532](code)
+    - le code pour ma réservation est [9517532](code)
+    - [1472589](code) est mon numéro de réservation
+    - mon numéro de référence est [3698521](code)
+    - mon code de réservation : [7896541](code)
+    - [1478963](code) est le numéro de ma réservation
+    - [7894561](code) est mon code de réservation
+    - le code de réservation : [6547891](code)
