@@ -1,0 +1,52 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-code",
+      "2": "I-code",
+      "3": "L-code",
+      "4": "U-code",
+      "5": "B-date",
+      "6": "I-date",
+      "7": "L-date",
+      "8": "U-date",
+      "9": "B-name",
+      "10": "I-name",
+      "11": "L-name",
+      "12": "U-name",
+      "13": "B-num_people",
+      "14": "I-num_people",
+      "15": "L-num_people",
+      "16": "U-num_people",
+      "17": "B-telephone",
+      "18": "I-telephone",
+      "19": "L-telephone",
+      "20": "U-telephone",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-code": 1,
+      "I-code": 2,
+      "L-code": 3,
+      "U-code": 4,
+      "B-date": 5,
+      "I-date": 6,
+      "L-date": 7,
+      "U-date": 8,
+      "B-name": 9,
+      "I-name": 10,
+      "L-name": 11,
+      "U-name": 12,
+      "B-num_people": 13,
+      "I-num_people": 14,
+      "L-num_people": 15,
+      "U-num_people": 16,
+      "B-telephone": 17,
+      "I-telephone": 18,
+      "L-telephone": 19,
+      "U-telephone": 20,
+      "O": 0
+    },
+    "num_tags": 21
+  }
+]

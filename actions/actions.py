@@ -34,13 +34,20 @@ class Database:
         with sqlite3.connect(self.db_name) as conn:
             conn.cursor().execute("CREATE TABLE IF NOT EXISTS reservation(code TEXT PRIMARY KEY, date TEXT, num_people TEXT, telephone TEXT, comment TEXT, name TEXT)")
 
-    def retrieve_entry(self, code):
+    def retrieve_entry_name(self, name):
         with sqlite3.connect(self.db_name) as conn:
             cursor = conn.cursor()
-            cursor.execute("SELECT * FROM reservation WHERE code=?", (code,))
+            cursor.execute("SELECT * FROM reservation WHERE name=?", (name,))
             result = cursor.fetchone()
             return result if result is not None else None
 
+    def retrieve_entry_code(self, code):
+        with sqlite3.connect(self.db_name) as conn:
+            cursor = conn.cursor()
+            cursor.execute("SELECT * FROM reservation WHERE code=?", (code))
+            result = cursor.fetchone()
+            return result if result is not None else None
+        
     def delete_entry(self, code):
         with sqlite3.connect(self.db_name) as conn:
             cursor = conn.cursor()
@@ -77,7 +84,7 @@ class Reservation:
         self.name = name
 
     def __str__(self):
-        return f"Reservation details: Date={self.date}, Time={self.code}, Num num_people={self.num_people},Telephone={self.telephone}, Comment={self.comment}, Name={self.name}"
+        return f"Reservation details: Date={self.date}, Code de réservation={self.code}, nombre de personnes={self.num_people}, Telephone={self.telephone}, Commentaire ={self.comment}, Nom={self.name}"
 
 class ActionManageDate(Action):
 
@@ -234,7 +241,7 @@ class AskRetrieveReservation(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         name = str(tracker.get_slot("name"))
         db = Database("restaurant.db")
-        result = db.retrieve_entry(name)
+        result = db.retrieve_entry_name(name)
         if(result):
             reservation = Reservation(result[0], result[1], result[2], result[3], result[4], result[5])
             print(reservation)
@@ -257,7 +264,7 @@ class ActionDeleteReservation(Action):
         code = str(tracker.get_slot("code"))
 
         db = Database("restaurant.db")
-        result = db.retrieve_entry(code)
+        result = db.retrieve_entry_code(code)
         if(result):
             reservation = Reservation(result[0], result[1], result[2])
             print(reservation)
